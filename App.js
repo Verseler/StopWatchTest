@@ -43,7 +43,7 @@ export default function App() {
     setIsPaused(false);
   };
   return (
-    <SafeAreaView style={{ paddingTop: StatusBar.currentHeight }}>
+    <SafeAreaView>
       <View style={styles.container}>
         <Timer time={time} />
         <ControlButtons
@@ -61,7 +61,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: StatusBar.currentHeight,
     height: "100%",
     backgroundColor: "#121212",
     alignItems: "center",
