@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import { StyleSheet, SafeAreaView, StatusBar, View } from "react-native";
+import { useRef, useState } from "react";
+import { StyleSheet, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 import ControlButtons from "./components/ControlButtons";
 import Timer from "./components/Timer";
@@ -43,7 +44,6 @@ export default function App() {
     setIsPaused(false);
   };
   return (
-    <SafeAreaView>
       <View style={styles.container}>
         <Timer time={time} />
         <ControlButtons
@@ -54,8 +54,8 @@ export default function App() {
           resumeStopwatch={resumeStopwatch}
           startStopwatch={startStopwatch}
         />
+        <StatusBar style="light" />
       </View>
-    </SafeAreaView>
   );
 }
 

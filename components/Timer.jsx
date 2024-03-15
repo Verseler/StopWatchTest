@@ -1,18 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
-import { useMemo } from "react";
 
 export default function Timer({ time }) {
-  const minutes = useMemo(
-    () =>
-      Math.floor(time / 60)
-        .toString()
-        .padStart(2, "0"),
-    [time]
-  );
-  const seconds = useMemo(
-    () => (time % 60).toString().padStart(2, "0"),
-    [time]
-  );
+  const minutes = Math.floor(time / 60)
+    .toString()
+    .padStart(2, "0");
+  const seconds = (time % 60).toString().padStart(2, "0");
+
   return (
     <View style={styles.container}>
       <View>
